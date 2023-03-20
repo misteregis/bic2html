@@ -29,15 +29,16 @@ xmlns="http://www.w3.org/TR/REC-html40">
         border-bottom: 1px solid #000;
     }
 
-    #matricula { width: 134px; }
-    #logradouro { width: 375px; }
-    #numero { width: 45px; }
-    #quadra { width: 60px; }
-    #lote { width: 52px; }
-    #bairro { width: 148px; }
-    #cep { width: 148px; }
-    #sujeito-passivo { width: 260px; }
-    #cpf-cnpj { width: 254px; }
+    #matricula { width: calc(100% - 96.3px); }
+    #logradouro { width: calc(100% - 75.59px); }
+    #numero { width: calc(100% - 21.91px - 12px); }
+    #quadra { width: calc(100% - 51.88px - 12px); }
+    #lote { width: calc(100% - 33.36px - 12px); }
+    #bairro { width: calc(100% - 42.97px - 12px); }
+    #cep { width: calc(100% - 35px); }
+    #sujeito-passivo { width: calc(100% - 98.55px - 12px); }
+    #cpf-cnpj { width: calc(100% - 72px); }
+    #obs { width: calc(100% - 35.34px - 12px); }
 
     table.hover,
     table.danger {
@@ -182,1027 +183,933 @@ xmlns="http://www.w3.org/TR/REC-html40">
 
 <body ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
 
-    <table border=0 cellpadding=0 cellspacing=0 width=814 style='border-collapse:
-     collapse;table-layout:fixed;width:619pt;margin: 15px auto;'>
-     <col width=17 span=11 style='mso-width-source:userset;mso-width-alt:621;
-     width:13pt'>
-     <col width=18 style='mso-width-source:userset;mso-width-alt:658;width:14pt'>
-     <col width=17 span=6 style='mso-width-source:userset;mso-width-alt:621;
-     width:13pt'>
-     <col width=20 style='mso-width-source:userset;mso-width-alt:731;width:15pt'>
-     <col width=17 span=4 style='mso-width-source:userset;mso-width-alt:621;
-     width:13pt'>
-     <col width=15 style='mso-width-source:userset;mso-width-alt:548;width:11pt'>
-     <col width=11 style='mso-width-source:userset;mso-width-alt:402;width:8pt'>
-     <col width=17 style='mso-width-source:userset;mso-width-alt:621;width:13pt'>
-     <col width=14 style='mso-width-source:userset;mso-width-alt:512;width:11pt'>
-     <col width=17 span=4 style='mso-width-source:userset;mso-width-alt:621;
-     width:13pt'>
-     <col width=15 style='mso-width-source:userset;mso-width-alt:548;width:11pt'>
-     <col width=17 style='mso-width-source:userset;mso-width-alt:621;width:13pt'>
-     <col width=15 style='mso-width-source:userset;mso-width-alt:548;width:11pt'>
-     <col width=17 span=7 style='mso-width-source:userset;mso-width-alt:621;
-     width:13pt'>
-     <col width=64 span=2 style='width:48pt'>
-     <tr height=17 style='height:12.75pt'>
-      <td colspan=24 height=17 width=410 style='height:12.75pt;width:313pt'
-      align=left valign=top><span style='mso-ignore:vglayout;
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+     collapse;table-layout:fixed;width:619pt;margin: 15px auto;">
+	<colgroup>
+		<col span="11" style="mso-width-source:userset;mso-width-alt:621;
+     width:13pt" width="17" />
+		<col style="mso-width-source:userset;mso-width-alt:658;width:14pt" width="18" />
+		<col span="6" style="mso-width-source:userset;mso-width-alt:621;
+     width:13pt" width="17" />
+		<col style="mso-width-source:userset;mso-width-alt:731;width:15pt" width="20" />
+		<col span="4" style="mso-width-source:userset;mso-width-alt:621;
+     width:13pt" width="17" />
+		<col style="mso-width-source:userset;mso-width-alt:548;width:11pt" width="15" />
+		<col style="mso-width-source:userset;mso-width-alt:402;width:8pt" width="11" />
+		<col style="mso-width-source:userset;mso-width-alt:621;width:13pt" width="17" />
+		<col style="mso-width-source:userset;mso-width-alt:512;width:11pt" width="14" />
+		<col span="4" style="mso-width-source:userset;mso-width-alt:621;
+     width:13pt" width="17" />
+		<col style="mso-width-source:userset;mso-width-alt:548;width:11pt" width="15" />
+		<col style="mso-width-source:userset;mso-width-alt:621;width:13pt" width="17" />
+		<col style="mso-width-source:userset;mso-width-alt:548;width:11pt" width="15" />
+		<col span="8" style="mso-width-source:userset;mso-width-alt:621;
+     width:13pt" width="17" />
+	</colgroup>
+	<tbody>
+		<tr height="17" style="height:12.75pt">
+			<td align="left" colspan="24" height="17" style="height:12.75pt;width:313pt" valign="top" width="410"><span style="mso-ignore:vglayout;
       position:absolute;z-index:1;margin-left:406px;margin-top:3px;width:192px;
-      height:56px'><img height=56 src=data:image/png;base64,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 v:shapes="Imagem_x0020_1"></span><![endif]><span
-      style='mso-ignore:vglayout2'>
-      <table cellpadding=0 cellspacing=0>
-       <tr>
-        <td colspan=24 height=17 class=xl129 width=410 style='height:12.75pt;
-        width:313pt'>ESTADO DO RIO DE JANEIRO</td>
-       </tr>
-      </table>
-      </span></td>
-      <td width=11 style='width:8pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=14 style='width:11pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=15 style='width:11pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=15 style='width:11pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=17 style='width:13pt'></td>
-      <td width=64 style='width:48pt'></td>
-      <td width=64 style='width:48pt'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td colspan=24 height=17 class=xl129 style='height:12.75pt'>MUNICIPIO DE
-      NITERÓI</td>
-      <td colspan=19 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td colspan=24 height=17 class=xl129 style='height:12.75pt'>SECRETARIA
-      MUNICIPAL DE FAZENDA</td>
-      <td colspan=19 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=43 style='height:12.75pt;mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl72 colspan=20 style='height:12.75pt;mso-ignore:colspan'>IDENTIFICAÇÃO
-      DO IMÓVEL E DO SUJEITO PASSIVO</td>
-      <td colspan=23 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=43 style='height:12.75pt;mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl73 colspan=14 style='height:12.75pt;mso-ignore:colspan'>Matrícula
-      IPTU: <span id="matricula"></span></td>
-      <td class=xl73 colspan=28 style='mso-ignore:colspan'>Logradouro: <span id="logradouro">&nbsp;</span></td>
-      <td></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=43 style='height:12.75pt;mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl73 colspan=5 style='height:12.75pt;mso-ignore:colspan'>N.º <span id="numero">&nbsp;</span></td>
-      <td class=xl73 colspan=7 style='mso-ignore:colspan'>Quadra: <span id="quadra">&nbsp;</span></td>
-      <td class=xl73 colspan=6 style='mso-ignore:colspan'>Lote: <span id="lote">&nbsp;</span></td>
-      <td class=xl73 colspan=12 style='mso-ignore:colspan'>Bairro: <span id="bairro">&nbsp;</span></td>
-      <td class=xl73 colspan=11 style='mso-ignore:colspan'>CEP: <span id="cep">&nbsp;</span></td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=43 style='height:12.75pt;mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl73 colspan=21 style='height:12.75pt;mso-ignore:colspan'>Sujeito Passivo: <span id="sujeito-passivo">&nbsp;</span></td>
-      <td class=xl73 colspan=20 style='mso-ignore:colspan'>CPF/CNPJ: <span id="cpf-cnpj">&nbsp;</span></td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=43 style='height:12.75pt;mso-ignore:colspan'></td>
-     </tr>
-     <tr class=xl73 height=17 style='height:12.75pt'>
-      <td height=17 class=xl72 colspan=16 style='height:12.75pt;mso-ignore:colspan'>CARACTERISTICA
-      DO IMÓVEL (PREDIAL)</td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-     </tr>
-     <tr class=xl74 height=16 style='height:12.0pt'>
-      <td height=16 class=xl74 style='height:12.0pt'></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=17 style='mso-height-source:userset;height:12.75pt'>
-      <td height=17 class=xl95 style='height:12.75pt'></td>
-      <td class=xl95></td>
-      <td class=xl74></td>
-      <td class=xl75 colspan=11 style='mso-ignore:colspan'>Caracterização da
-      Construção</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl75 colspan=10 style='mso-ignore:colspan'>Utilização Principal
-      (Uso)</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl76 colspan=4 style='mso-ignore:colspan'>Estrutura</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl95 style='height:8.1pt'></td>
-      <td class=xl95></td>
-      <td class=xl74></td>
-      <td class=xl75></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl75></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl76></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=16 style='height:12.0pt'>
-      <td colspan=2 rowspan=6 height=97 class=xl120 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black;height:72.75pt;writing-mode: vertical-lr;-ms-transform: rotate(180deg);transform: rotate(180deg);'>Nº PAVIMENTOS</td>
-      <td class=xl74></td>
-      <td class=xl77 colspan=4 style='mso-ignore:colspan'>01- Casa</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl78 colspan=7 style='mso-ignore:colspan;border-right:1.0pt solid black'>10-
-      Galpão Fechado</td>
-      <td class=xl74></td>
-      <td class=xl77 colspan=5 style='mso-ignore:colspan'>1- Residencial</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl84 colspan=9 style='mso-ignore:colspan;border-right:1.0pt solid black'>8-
-      Agricultura e extração,<span style='mso-spacerun:yes'> </span></td>
-      <td class=xl74></td>
-      <td class=xl77 colspan=5 style='mso-ignore:colspan;border-right:1.0pt solid black'>1-
-      Concreto</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=16 style='height:12.0pt'>
-      <td height=16 class=xl74 style='height:12.0pt'></td>
-      <td class=xl80 colspan=6 style='mso-ignore:colspan'>04- Apartamento</td>
-      <td class=xl74></td>
-      <td class=xl74 colspan=7 style='mso-ignore:colspan;border-right:1.0pt solid black'>11-
-      Galpão Aberto</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>2- Industrial</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74 colspan=8 style='mso-ignore:colspan'>Áreas não
-      utilizadas,<span style='mso-spacerun:yes'> </span></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>2- Madeira</td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=16 style='height:12.0pt'>
-      <td height=16 class=xl74 style='height:12.0pt'></td>
-      <td class=xl80 colspan=5 style='mso-ignore:colspan'>05- Sobreloja</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74 colspan=6 style='mso-ignore:colspan'>12- Ed. Garagem</td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=5 style='mso-ignore:colspan'>3- Comercial</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74 colspan=6 style='mso-ignore:colspan'>Áreas alagadas</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=5 style='mso-ignore:colspan;border-right:1.0pt solid black'>3-
-      Alvenaria</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=16 style='height:12.0pt'>
-      <td height=16 class=xl74 style='height:12.0pt'></td>
-      <td class=xl80 colspan=6 style='mso-ignore:colspan'>06- Conj. Salas</td>
-      <td class=xl74></td>
-      <td class=xl74 colspan=7 style='mso-ignore:colspan;border-right:1.0pt solid black'>13-
-      Estacionamento</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>4- Serviços</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>4- Metálica</td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=16 style='height:12.0pt'>
-      <td height=16 class=xl74 style='height:12.0pt'></td>
-      <td class=xl80 colspan=7 style='mso-ignore:colspan'>07- Const. Especial</td>
-      <td class=xl74 colspan=3 style='mso-ignore:colspan'>14- Loja</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=9 style='mso-ignore:colspan'>5- Atividades Religiosas</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=17 style='height:12.75pt'>
-      <td height=17 class=xl74 style='height:12.75pt'></td>
-      <td class=xl80 colspan=7 style='mso-ignore:colspan'>08- Sala Comercial</td>
-      <td class=xl74 colspan=6 style='mso-ignore:colspan'>15- Sala/Serviços</td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=13 style='mso-ignore:colspan'>6- Atividades Culturais
-      e Diversões</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=17 style='mso-height-source:userset;height:12.75pt'>
-      <td colspan=2 rowspan=2 height=34 class=xl130 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black;height:25.5pt'>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td colspan=2 rowspan=2 class=xl134 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=10 style='mso-ignore:colspan'>7- Transporte - Comunic.
-      e<span style='mso-spacerun:yes'> </span></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl80>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=17 style='mso-height-source:userset;height:12.75pt'>
-      <td height=17 class=xl74 style='height:12.75pt'></td>
-      <td class=xl82>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl82 colspan=6 style='mso-ignore:colspan'>Serv. Util. Pública</td>
-      <td class=xl92>&nbsp;</td>
-      <td class=xl92>&nbsp;</td>
-      <td class=xl92>&nbsp;</td>
-      <td class=xl92>&nbsp;</td>
-      <td class=xl92>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl82>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=16 style='height:12.0pt'>
-      <td height=16 class=xl74 style='height:12.0pt'></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=6 style='mso-height-source:userset;height:5.1pt'>
-      <td height=6 colspan=18 style='height:5.1pt;mso-ignore:colspan'></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td colspan=10 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl75 colspan=5 style='height:12.75pt;mso-ignore:colspan'>Revestimento</td>
-      <td colspan=3 style='mso-ignore:colspan'></td>
-      <td class=xl75 colspan=2 style='mso-ignore:colspan'>Piso</td>
-      <td colspan=5 style='mso-ignore:colspan'></td>
-      <td class=xl75 colspan=4 style='mso-ignore:colspan'>Cobertura</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class=xl75 colspan=3 style='mso-ignore:colspan'>Forro</td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl75 colspan=5 style='mso-ignore:colspan'>Inst. Elétrica</td>
-      <td class=xl75 colspan=5 style='mso-ignore:colspan'>Inst. Sanitária</td>
-      <td colspan=5 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl75 style='height:8.1pt'></td>
-      <td colspan=7 style='mso-ignore:colspan'></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td colspan=5 style='mso-ignore:colspan'></td>
-      <td class=xl75></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl75></td>
-      <td colspan=9 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl77 colspan=3 style='height:12.75pt;mso-ignore:colspan'>1-
-      Sem</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl66>&nbsp;</td>
-      <td></td>
-      <td class=xl77 colspan=3 style='mso-ignore:colspan'>1- Sem</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl66>&nbsp;</td>
-      <td></td>
-      <td class=xl77 colspan=4 style='mso-ignore:colspan'>1- Palma</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl66>&nbsp;</td>
-      <td></td>
-      <td class=xl89 colspan=4 style='mso-ignore:colspan'>1- Sem</td>
-      <td class=xl85>&nbsp;</td>
-      <td class=xl88></td>
-      <td class=xl77 colspan=3 style='mso-ignore:colspan'>1- Sem</td>
-      <td class=xl79>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl77 colspan=3 style='mso-ignore:colspan'>1- Sem</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl93>&nbsp;</td>
-      <td class=xl94>&nbsp;</td>
-      <td class=xl75></td>
-      <td class=xl75></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl80 colspan=7 style='height:12.75pt;mso-ignore:colspan;
-      border-right:1.0pt solid black'>2- Emboço/ Reboco</td>
-      <td></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>2- Cimento</td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=3 style='mso-ignore:colspan'>2- Zinco</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl90 colspan=5 style='mso-ignore:colspan;border-right:1.0pt solid black'>2-
-      Madeira</td>
-      <td class=xl88></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan;border-right:1.0pt solid black'>2-
-      Aparente</td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>2- Externa</td>
-      <td class=xl74></td>
-      <td></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl80 colspan=4 style='height:12.75pt;mso-ignore:colspan'>3-
-      Caiação</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=6 style='mso-ignore:colspan;border-right:1.0pt solid black'>3-
-      Mat. Cerâmico</td>
-      <td></td>
-      <td class=xl80 colspan=6 style='mso-ignore:colspan;border-right:1.0pt solid black'>3-
-      Fibro Cimento</td>
-      <td></td>
-      <td class=xl90 colspan=5 style='mso-ignore:colspan;border-right:1.0pt solid black'>3-
-      Chapas</td>
-      <td class=xl88></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan;border-right:1.0pt solid black'>3-
-      Embutid<span style='display:none'>a</span></td>
-      <td class=xl74></td>
-      <td class=xl80 colspan=7 style='mso-ignore:colspan'>3- Interna simples</td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl80 colspan=4 style='height:12.75pt;mso-ignore:colspan'>4-
-      Pintura</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=6 style='mso-ignore:colspan;border-right:1.0pt solid black'>4-
-      Taco/ Madeira</td>
-      <td></td>
-      <td class=xl80 colspan=3 style='mso-ignore:colspan'>4- Telha</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl90 colspan=5 style='mso-ignore:colspan;border-right:1.0pt solid black'>4-
-      Estuque</td>
-      <td class=xl88></td>
-      <td class=xl90>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=7 style='mso-ignore:colspan'>4- Interna Completa</td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl80 colspan=4 style='height:12.75pt;mso-ignore:colspan'>5-
-      Madeira</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=6 style='mso-ignore:colspan;border-right:1.0pt solid black'>5-
-      Mat. Plástico</td>
-      <td></td>
-      <td class=xl80 colspan=3 style='mso-ignore:colspan'>5- Laje</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl90 colspan=3 style='mso-ignore:colspan'>5- Laje</td>
-      <td class=xl88></td>
-      <td class=xl91>&nbsp;</td>
-      <td class=xl88></td>
-      <td class=xl90>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=3 style='mso-ignore:colspan'>5- Duas</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=18 style='height:13.5pt'>
-      <td height=18 class=xl80 colspan=6 style='height:13.5pt;mso-ignore:colspan'>6-
-      Mat. Cerâmico</td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>6- Especial</td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>6- Especial</td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=3 style='mso-ignore:colspan'>6- Três</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td></td>
-      <td class=xl74></td>
-      <td class=xl81>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl80 colspan=4 style='height:12.75pt;mso-ignore:colspan'>7-
-      Especial</td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=6 style='mso-ignore:colspan'>7- Mais de Três</td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=18 style='height:13.5pt'>
-      <td height=18 class=xl69 style='height:13.5pt'>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl97>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=39 style='height:12.75pt;mso-ignore:colspan'></td>
-      <td></td>
-      <td class=xl74></td>
-      <td></td>
-      <td></td>
-     </tr>
-     <tr height=6 style='mso-height-source:userset;height:5.1pt'>
-      <td height=6 colspan=40 style='height:5.1pt;mso-ignore:colspan'></td>
-      <td class=xl88></td>
-      <td></td>
-      <td></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl75 colspan=4 style='height:12.75pt;mso-ignore:colspan'>Garagem</td>
-      <td colspan=3 style='mso-ignore:colspan'></td>
-      <td></td>
-      <td class=xl75 colspan=4 style='mso-ignore:colspan'>Elevador<span
-      style='mso-spacerun:yes'> </span></td>
-      <td></td>
-      <td></td>
-      <td class=xl75 colspan=5 style='mso-ignore:colspan'>Conservação</td>
-      <td></td>
-      <td class=xl76 colspan=4 style='mso-ignore:colspan'>Condição</td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-      <td colspan=6 class=xl110>Área Edificada</td>
-      <td class=xl76></td>
-      <td colspan=8 class=xl110>Área Total<span style='mso-spacerun:yes'> </span></td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl75 style='height:8.1pt'></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td colspan=3 style='mso-ignore:colspan'></td>
-      <td></td>
-      <td class=xl75></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class=xl75></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class=xl76></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-      <td colspan=6 rowspan=2 class=xl107>da Unidade</td>
-      <td class=xl76></td>
-      <td colspan=8 rowspan=2 class=xl107>Construída no Lote</td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl77 colspan=3 style='height:12.75pt;mso-ignore:colspan'>1-
-      Sem</td>
-      <td class=xl78>&nbsp;</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl66>&nbsp;</td>
-      <td></td>
-      <td class=xl77 colspan=3 style='mso-ignore:colspan'>1- Sem</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl66>&nbsp;</td>
-      <td></td>
-      <td class=xl77 colspan=3 style='mso-ignore:colspan'>1- Novo</td>
-      <td class=xl65>&nbsp;</td>
-      <td class=xl66>&nbsp;</td>
-      <td></td>
-      <td class=xl77 colspan=4 style='mso-ignore:colspan;border-right:1.0pt solid black'>1-
-      Alugada</td>
-      <td></td>
-      <td></td>
-      <td class=xl76></td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=18 style='height:13.5pt'>
-      <td height=18 class=xl80 colspan=3 style='height:13.5pt;mso-ignore:colspan'>2-
-      Uma</td>
-      <td class=xl74></td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=3 style='mso-ignore:colspan'>2- Um</td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=3 style='mso-ignore:colspan'>2- Bom</td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan;border-right:1.0pt solid black'>2-
-      Própria</td>
-      <td></td>
-      <td></td>
-      <td colspan=17 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=18 style='height:13.5pt'>
-      <td height=18 class=xl80 colspan=3 style='height:13.5pt;mso-ignore:colspan'>3-
-      Duas</td>
-      <td class=xl74></td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl80 colspan=5 style='mso-ignore:colspan;border-right:1.0pt solid black'>3-
-      Mais de um</td>
-      <td></td>
-      <td class=xl80 colspan=4 style='mso-ignore:colspan'>3- Regular</td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td class=xl68>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td colspan=4 rowspan=2 class=xl111 style='border-bottom:.5pt solid black'>&nbsp;</td>
-      <td colspan=2 rowspan=2 class=xl115 style='border-right:1.0pt solid black'>m²</td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-      <td colspan=5 rowspan=2 class=xl111 style='border-bottom:.5pt solid black'>&nbsp;</td>
-      <td colspan=2 rowspan=2 class=xl119 style='border-right:1.0pt solid black'>m²</td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl80 colspan=4 style='height:12.75pt;mso-ignore:colspan'>4-
-      Mais de<span style='mso-spacerun:yes'> </span></td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl80>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td class=xl67>&nbsp;</td>
-      <td></td>
-      <td colspan=2 rowspan=2 class=xl111 style='border-right:1.0pt solid black;
-      border-bottom:1.0pt solid black'>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=18 style='height:13.5pt'>
-      <td height=18 class=xl82 colspan=2 style='height:13.5pt;mso-ignore:colspan'>Uma</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl83>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl71>&nbsp;</td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-      <td class=xl69>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl70>&nbsp;</td>
-      <td class=xl71>&nbsp;</td>
-      <td colspan=2 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=18 style='height:13.5pt'>
-      <td height=18 colspan=13 style='height:13.5pt;mso-ignore:colspan'></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td colspan=10 style='mso-ignore:colspan'></td>
-      <td colspan=2 rowspan=4 height=62 width=32 style='mso-ignore:colspan-rowspan;
-      height:47.1pt;width:24pt'><!--[if gte vml 1]><v:shape id="Text_x0020_Box_x0020_44"
+      height:56px"><img height="56" src="data:image/png;base64,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" v:shapes="Imagem_x0020_1" /></span><!--[endif]--><span style="mso-ignore:vglayout2"> </span>
+			<table cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td class="xl129" colspan="24" height="17" style="height:12.75pt;
+        width:313pt" width="410"><span style="mso-ignore:vglayout2">ESTADO DO RIO DE JANEIRO</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<span style="mso-ignore:vglayout2"> </span></td>
+			<td style="width:8pt" width="11">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:11pt" width="14">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:11pt" width="15">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:11pt" width="15">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+			<td style="width:13pt" width="17">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl129" colspan="24" height="17" style="height:12.75pt">MUNICIPIO DE NITER&Oacute;I</td>
+			<td colspan="17" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl129" colspan="24" height="17" style="height:12.75pt">SECRETARIA MUNICIPAL DE FAZENDA</td>
+			<td colspan="17" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="41" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl72" colspan="20" height="17" style="height:12.75pt;mso-ignore:colspan">IDENTIFICA&Ccedil;&Atilde;O DO IM&Oacute;VEL E DO SUJEITO PASSIVO</td>
+			<td colspan="21" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="41" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl73" colspan="14" height="17" style="height:12.75pt;mso-ignore:colspan">Matr&iacute;cula IPTU: <span id="matricula">&nbsp;</span></td>
+			<td class="xl73" colspan="27" style="mso-ignore:colspan">Logradouro: <span id="logradouro">&nbsp;</span></td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="41" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl73" colspan="5" height="17" style="height:12.75pt;mso-ignore:colspan">N.&ordm; <span id="numero">&nbsp;</span></td>
+			<td class="xl73" colspan="7" style="mso-ignore:colspan">Quadra: <span id="quadra">&nbsp;</span></td>
+			<td class="xl73" colspan="6" style="mso-ignore:colspan">Lote: <span id="lote">&nbsp;</span></td>
+			<td class="xl73" colspan="12" style="mso-ignore:colspan">Bairro: <span id="bairro">&nbsp;</span></td>
+			<td class="xl73" colspan="11" style="mso-ignore:colspan">CEP: <span id="cep">&nbsp;</span></td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="41" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl73" colspan="21" height="17" style="height:12.75pt;mso-ignore:colspan">Sujeito Passivo: <span id="sujeito-passivo">&nbsp;</span></td>
+			<td class="xl73" colspan="20" style="mso-ignore:colspan">CPF/CNPJ: <span id="cpf-cnpj">&nbsp;</span></td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="41" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr class="xl73" height="17" style="height:12.75pt">
+			<td class="xl72" colspan="16" height="17" style="height:12.75pt;mso-ignore:colspan">CARACTERISTICA DO IM&Oacute;VEL (PREDIAL)</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="16" style="height:12.0pt">
+			<td class="xl74" height="16" style="height:12.0pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="17" style="mso-height-source:userset;height:12.75pt">
+			<td class="xl95" height="17" style="height:12.75pt">&nbsp;</td>
+			<td class="xl95">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl75" colspan="11" style="mso-ignore:colspan">Caracteriza&ccedil;&atilde;o da Constru&ccedil;&atilde;o</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl75" colspan="10" style="mso-ignore:colspan">Utiliza&ccedil;&atilde;o Principal (Uso)</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl76" colspan="4" style="mso-ignore:colspan">Estrutura</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl95" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl95">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl76">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="16" style="height:12.0pt">
+			<td class="xl120" colspan="2" height="97" rowspan="6" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black;height:72.75pt;writing-mode: vertical-lr;-ms-transform: rotate(180deg);transform: rotate(180deg);">N&ordm; PAVIMENTOS</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl77" colspan="4" style="mso-ignore:colspan">01- Casa</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl78" colspan="7" style="mso-ignore:colspan;border-right:1.0pt solid black">10- Galp&atilde;o Fechado</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl77" colspan="5" style="mso-ignore:colspan">1- Residencial</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl84" colspan="9" style="mso-ignore:colspan;border-right:1.0pt solid black">8- Agricultura e extra&ccedil;&atilde;o,<span style="mso-spacerun:yes">&nbsp;</span></td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl77" colspan="5" style="mso-ignore:colspan;border-right:1.0pt solid black">1- Concreto</td>
+		</tr>
+		<tr class="xl74" height="16" style="height:12.0pt">
+			<td class="xl74" height="16" style="height:12.0pt">&nbsp;</td>
+			<td class="xl80" colspan="6" style="mso-ignore:colspan">04- Apartamento</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74" colspan="7" style="mso-ignore:colspan;border-right:1.0pt solid black">11- Galp&atilde;o Aberto</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">2- Industrial</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74" colspan="8" style="mso-ignore:colspan">&Aacute;reas n&atilde;o utilizadas,<span style="mso-spacerun:yes">&nbsp;</span></td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">2- Madeira</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="16" style="height:12.0pt">
+			<td class="xl74" height="16" style="height:12.0pt">&nbsp;</td>
+			<td class="xl80" colspan="5" style="mso-ignore:colspan">05- Sobreloja</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74" colspan="6" style="mso-ignore:colspan">12- Ed. Garagem</td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="5" style="mso-ignore:colspan">3- Comercial</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74" colspan="6" style="mso-ignore:colspan">&Aacute;reas alagadas</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="5" style="mso-ignore:colspan;border-right:1.0pt solid black">3- Alvenaria</td>
+		</tr>
+		<tr class="xl74" height="16" style="height:12.0pt">
+			<td class="xl74" height="16" style="height:12.0pt">&nbsp;</td>
+			<td class="xl80" colspan="6" style="mso-ignore:colspan">06- Conj. Salas</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74" colspan="7" style="mso-ignore:colspan;border-right:1.0pt solid black">13- Estacionamento</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">4- Servi&ccedil;os</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">4- Met&aacute;lica</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="16" style="height:12.0pt">
+			<td class="xl74" height="16" style="height:12.0pt">&nbsp;</td>
+			<td class="xl80" colspan="7" style="mso-ignore:colspan">07- Const. Especial</td>
+			<td class="xl74" colspan="3" style="mso-ignore:colspan">14- Loja</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="9" style="mso-ignore:colspan">5- Atividades Religiosas</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="17" style="height:12.75pt">
+			<td class="xl74" height="17" style="height:12.75pt">&nbsp;</td>
+			<td class="xl80" colspan="7" style="mso-ignore:colspan">08- Sala Comercial</td>
+			<td class="xl74" colspan="6" style="mso-ignore:colspan">15- Sala/Servi&ccedil;os</td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="13" style="mso-ignore:colspan">6- Atividades Culturais e Divers&otilde;es</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="17" style="mso-height-source:userset;height:12.75pt">
+			<td class="xl130" colspan="2" height="34" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black;height:25.5pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl134" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="10" style="mso-ignore:colspan">7- Transporte - Comunic. e<span style="mso-spacerun:yes">&nbsp;</span></td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="17" style="mso-height-source:userset;height:12.75pt">
+			<td class="xl74" height="17" style="height:12.75pt">&nbsp;</td>
+			<td class="xl82">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl82" colspan="6" style="mso-ignore:colspan">Serv. Util. P&uacute;blica</td>
+			<td class="xl92">&nbsp;</td>
+			<td class="xl92">&nbsp;</td>
+			<td class="xl92">&nbsp;</td>
+			<td class="xl92">&nbsp;</td>
+			<td class="xl92">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl82">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="16" style="height:12.0pt">
+			<td class="xl74" height="16" style="height:12.0pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr height="6" style="mso-height-source:userset;height:5.1pt">
+			<td colspan="18" height="6" style="height:5.1pt;mso-ignore:colspan">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td colspan="8" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl75" colspan="5" height="17" style="height:12.75pt;mso-ignore:colspan">Revestimento</td>
+			<td colspan="3" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl75" colspan="2" style="mso-ignore:colspan">Piso</td>
+			<td colspan="5" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl75" colspan="4" style="mso-ignore:colspan">Cobertura</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl75" colspan="3" style="mso-ignore:colspan">Forro</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75" colspan="5" style="mso-ignore:colspan">Inst. El&eacute;trica</td>
+			<td class="xl75" colspan="5" style="mso-ignore:colspan">Inst. Sanit&aacute;ria</td>
+			<td colspan="3" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl75" height="10" style="height:8.1pt">&nbsp;</td>
+			<td colspan="7" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td colspan="5" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td colspan="7" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl77" colspan="3" height="17" style="height:12.75pt;mso-ignore:colspan">1- Sem</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl66">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl77" colspan="3" style="mso-ignore:colspan">1- Sem</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl66">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl77" colspan="4" style="mso-ignore:colspan">1- Palma</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl66">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl89" colspan="4" style="mso-ignore:colspan">1- Sem</td>
+			<td class="xl85">&nbsp;</td>
+			<td class="xl88">&nbsp;</td>
+			<td class="xl77" colspan="3" style="mso-ignore:colspan">1- Sem</td>
+			<td class="xl79">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl77" colspan="3" style="mso-ignore:colspan">1- Sem</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl93">&nbsp;</td>
+			<td class="xl94">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl80" colspan="7" height="17" style="height:12.75pt;mso-ignore:colspan;
+      border-right:1.0pt solid black">2- Embo&ccedil;o/ Reboco</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">2- Cimento</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="3" style="mso-ignore:colspan">2- Zinco</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl90" colspan="5" style="mso-ignore:colspan;border-right:1.0pt solid black">2- Madeira</td>
+			<td class="xl88">&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan;border-right:1.0pt solid black">2- Aparente</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">2- Externa</td>
+			<td class="xl74">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl80" colspan="4" height="17" style="height:12.75pt;mso-ignore:colspan">3- Caia&ccedil;&atilde;o</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="6" style="mso-ignore:colspan;border-right:1.0pt solid black">3- Mat. Cer&acirc;mico</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="6" style="mso-ignore:colspan;border-right:1.0pt solid black">3- Fibro Cimento</td>
+			<td>&nbsp;</td>
+			<td class="xl90" colspan="5" style="mso-ignore:colspan;border-right:1.0pt solid black">3- Chapas</td>
+			<td class="xl88">&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan;border-right:1.0pt solid black">3- Embutid<span style="display:none">a</span></td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl80" colspan="7" style="mso-ignore:colspan">3- Interna simples</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl80" colspan="4" height="17" style="height:12.75pt;mso-ignore:colspan">4- Pintura</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="6" style="mso-ignore:colspan;border-right:1.0pt solid black">4- Taco/ Madeira</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="3" style="mso-ignore:colspan">4- Telha</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl90" colspan="5" style="mso-ignore:colspan;border-right:1.0pt solid black">4- Estuque</td>
+			<td class="xl88">&nbsp;</td>
+			<td class="xl90">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="7" style="mso-ignore:colspan">4- Interna Completa</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl80" colspan="4" height="17" style="height:12.75pt;mso-ignore:colspan">5- Madeira</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="6" style="mso-ignore:colspan;border-right:1.0pt solid black">5- Mat. Pl&aacute;stico</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="3" style="mso-ignore:colspan">5- Laje</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl90" colspan="3" style="mso-ignore:colspan">5- Laje</td>
+			<td class="xl88">&nbsp;</td>
+			<td class="xl91">&nbsp;</td>
+			<td class="xl88">&nbsp;</td>
+			<td class="xl90">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="3" style="mso-ignore:colspan">5- Duas</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr height="18" style="height:13.5pt">
+			<td class="xl80" colspan="6" height="18" style="height:13.5pt;mso-ignore:colspan">6- Mat. Cer&acirc;mico</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">6- Especial</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">6- Especial</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="3" style="mso-ignore:colspan">6- Tr&ecirc;s</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl81">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl80" colspan="4" height="17" style="height:12.75pt;mso-ignore:colspan">7- Especial</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="6" style="mso-ignore:colspan">7- Mais de Tr&ecirc;s</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+		</tr>
+		<tr height="18" style="height:13.5pt">
+			<td class="xl69" height="18" style="height:13.5pt">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl97">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="39" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr height="6" style="mso-height-source:userset;height:5.1pt">
+			<td colspan="40" height="6" style="height:5.1pt;mso-ignore:colspan">&nbsp;</td>
+			<td class="xl88">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl75" colspan="4" height="17" style="height:12.75pt;mso-ignore:colspan">Garagem</td>
+			<td colspan="3" style="mso-ignore:colspan">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl75" colspan="4" style="mso-ignore:colspan">Elevador<span style="mso-spacerun:yes">&nbsp;</span></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl75" colspan="5" style="mso-ignore:colspan">Conserva&ccedil;&atilde;o</td>
+			<td>&nbsp;</td>
+			<td class="xl76" colspan="4" style="mso-ignore:colspan">Condi&ccedil;&atilde;o</td>
+			<td colspan="2" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl110" colspan="6">&Aacute;rea Edificada</td>
+			<td class="xl76">&nbsp;</td>
+			<td class="xl110" colspan="8">&Aacute;rea Total<span style="mso-spacerun:yes">&nbsp;</span></td>
+		</tr>
+		<tr height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl75" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td colspan="3" style="mso-ignore:colspan">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl75">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl76">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td colspan="2" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl107" colspan="6" rowspan="2">da Unidade</td>
+			<td class="xl76">&nbsp;</td>
+			<td class="xl107" colspan="8" rowspan="2">Constru&iacute;da no Lote</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl77" colspan="3" height="17" style="height:12.75pt;mso-ignore:colspan">1- Sem</td>
+			<td class="xl78">&nbsp;</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl66">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl77" colspan="3" style="mso-ignore:colspan">1- Sem</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl66">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl77" colspan="3" style="mso-ignore:colspan">1- Novo</td>
+			<td class="xl65">&nbsp;</td>
+			<td class="xl66">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl77" colspan="4" style="mso-ignore:colspan;border-right:1.0pt solid black">1- Alugada</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl76">&nbsp;</td>
+		</tr>
+		<tr height="18" style="height:13.5pt">
+			<td class="xl80" colspan="3" height="18" style="height:13.5pt;mso-ignore:colspan">2- Uma</td>
+			<td class="xl74">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="3" style="mso-ignore:colspan">2- Um</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="3" style="mso-ignore:colspan">2- Bom</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan;border-right:1.0pt solid black">2- Pr&oacute;pria</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td colspan="15" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="18" style="height:13.5pt">
+			<td class="xl80" colspan="3" height="18" style="height:13.5pt;mso-ignore:colspan">3- Duas</td>
+			<td class="xl74">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="5" style="mso-ignore:colspan;border-right:1.0pt solid black">3- Mais de um</td>
+			<td>&nbsp;</td>
+			<td class="xl80" colspan="4" style="mso-ignore:colspan">3- Regular</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl68">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="4" rowspan="2" style="border-bottom:.5pt solid black">&nbsp;</td>
+			<td class="xl115" colspan="2" rowspan="2" style="border-right:1.0pt solid black">m&sup2;</td>
+			<td colspan="2" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl111" colspan="5" rowspan="2" style="border-bottom:.5pt solid black">&nbsp;</td>
+			<td class="xl119" colspan="2" rowspan="2" style="border-right:1.0pt solid black">m&sup2;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl80" colspan="4" height="17" style="height:12.75pt;mso-ignore:colspan">4- Mais de<span style="mso-spacerun:yes">&nbsp;</span></td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl80">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl67">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl111" colspan="2" rowspan="2" style="border-right:1.0pt solid black;
+      border-bottom:1.0pt solid black">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td colspan="2" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="18" style="height:13.5pt">
+			<td class="xl82" colspan="2" height="18" style="height:13.5pt;mso-ignore:colspan">Uma</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl83">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl71">&nbsp;</td>
+			<td colspan="2" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl69">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl70">&nbsp;</td>
+			<td class="xl71">&nbsp;</td>
+		</tr>
+		<tr height="18" style="height:13.5pt">
+			<td colspan="13" height="18" style="height:13.5pt;mso-ignore:colspan">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td colspan="10" style="mso-ignore:colspan">&nbsp;</td>
+			<td colspan="2" height="62" rowspan="4" style="mso-ignore:colspan-rowspan;
+      height:47.1pt;width:24pt" width="32"><!--[if gte vml 1]><v:shape id="Text_x0020_Box_x0020_44"
        o:spid="_x0000_s10308" type="#_x0000_t75" style='position:absolute;
        margin-left:9pt;margin-top:21pt;width:8.25pt;height:16.5pt;z-index:3;
        visibility:visible;mso-wrap-style:square;v-text-anchor:top' o:gfxdata="UEsDBBQABgAIAAAAIQDw94q7/QAAAOIBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRzUrEMBDH
@@ -1292,36 +1199,38 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <x:CF>Bitmap</x:CF>
         <x:AutoPict/>
        </x:ClientData>
-      </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
-      <table cellpadding=0 cellspacing=0>
-       <tr>
-        <td width=12 height=11></td>
-       </tr>
-       <tr>
-        <td></td>
-        <td></td>
-        <td width=8></td>
-       </tr>
-       <tr>
-        <td height=12></td>
-       </tr>
-      </table>
-      </span><![endif]><!--[if !mso & vml]><span style='width:24.0pt;height:46.5pt'></span><![endif]--></td>
-      <td colspan=11 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=21 style='height:15.75pt'>
-      <td height=21 class=xl74 colspan=3 style='height:15.75pt;mso-ignore:colspan'>Sauna</td>
-      <td class=xl98>&nbsp;</td>
-      <td colspan=4 style='mso-ignore:colspan'></td>
-      <td class=xl73 colspan=3 style='mso-ignore:colspan'>Piscina</td>
-      <td class=xl98>&nbsp;</td>
-      <td></td>
-      <td></td>
-      <td class=xl73 colspan=7 style='mso-ignore:colspan'>Quada de Esporte</td>
-      <td class=xl98>&nbsp;</td>
-      <td colspan=6 style='mso-ignore:colspan'></td>
-      <td colspan=2 rowspan=3 height=44 width=34 style='mso-ignore:colspan-rowspan;
-      height:33.6pt;width:26pt'><!--[if gte vml 1]><v:shape id="Text_x0020_Box_x0020_40"
+      </v:shape><![endif]--><!--[if !vml]-->
+			<table cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td height="11" width="12">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td width="8">&nbsp;</td>
+					</tr>
+					<tr>
+						<td height="12">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<!--[endif]--><!--[if !mso & vml]><span style='width:24.0pt;height:46.5pt'></span><![endif]--></td>
+			<td colspan="9" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="21" style="height:15.75pt">
+			<td class="xl74" colspan="3" height="21" style="height:15.75pt;mso-ignore:colspan">Sauna</td>
+			<td class="xl98">&nbsp;</td>
+			<td colspan="4" style="mso-ignore:colspan">&nbsp;</td>
+			<td class="xl73" colspan="3" style="mso-ignore:colspan">Piscina</td>
+			<td class="xl98">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="xl73" colspan="7" style="mso-ignore:colspan">Quada de Esporte</td>
+			<td class="xl98">&nbsp;</td>
+			<td colspan="6" style="mso-ignore:colspan">&nbsp;</td>
+			<td colspan="2" height="44" rowspan="3" style="mso-ignore:colspan-rowspan;
+      height:33.6pt;width:26pt" width="34"><!--[if gte vml 1]><v:shape id="Text_x0020_Box_x0020_40"
        o:spid="_x0000_s10307" type="#_x0000_t75" style='position:absolute;
        margin-left:10.5pt;margin-top:3.75pt;width:7.5pt;height:17.25pt;z-index:2;
        visibility:visible;mso-wrap-style:square;v-text-anchor:top' o:gfxdata="UEsDBBQABgAIAAAAIQDw94q7/QAAAOIBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRzUrEMBDH
@@ -1366,628 +1275,594 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <x:CF>Bitmap</x:CF>
         <x:AutoPict/>
        </x:ClientData>
-      </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
-      <table cellpadding=0 cellspacing=0>
-       <tr>
-        <td width=14 height=5></td>
-       </tr>
-       <tr>
-        <td></td>
-        <td></td>
-        <td width=10></td>
-       </tr>
-       <tr>
-        <td height=16></td>
-       </tr>
-      </table>
-      </span><![endif]><!--[if !mso & vml]><span style='width:25.5pt;height:33.0pt'></span><![endif]--></td>
-      <td colspan=11 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=6 style='mso-height-source:userset;height:5.1pt'>
-      <td height=6 colspan=13 style='height:5.1pt;mso-ignore:colspan'></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td colspan=8 style='mso-ignore:colspan'></td>
-      <td colspan=11 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=28 style='height:12.75pt;mso-ignore:colspan'></td>
-      <td colspan=11 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr class=xl73 height=17 style='height:12.75pt'>
-      <td height=17 class=xl72 colspan=14 style='height:12.75pt;mso-ignore:colspan'>TIPO
-      E QUANTIDADE DE CÔMODOS</td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-      <td class=xl73></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 colspan=43 style='height:12.75pt;mso-ignore:colspan'></td>
-     </tr>
-     <tr height=17 style='height:12.75pt'>
-      <td height=17 class=xl76 colspan=4 style='height:12.75pt;mso-ignore:colspan'>Cômodos</td>
-      <td class=xl74></td>
-      <td colspan=38 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl76 style='height:8.1pt'></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td colspan=38 style='mso-ignore:colspan'></td>
-     </tr>
-     <tr class=xl87 height=24 style='mso-height-source:userset;height:18.0pt'>
-      <td height=24 class=xl87 colspan=2 style='height:18.0pt;mso-ignore:colspan'>Sala</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=3 style='mso-ignore:colspan'>Cozinha</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=3 style='mso-ignore:colspan'>Closet</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=5 style='mso-ignore:colspan'>Despensa</td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td colspan=6 class=xl108 width=100 style='width:76pt'>Depndência de
-      Empregado<span style='mso-spacerun:yes'> </span></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl87 style='height:8.1pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl96 width=15 style='width:11pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=24 style='mso-height-source:userset;height:18.0pt'>
-      <td height=24 class=xl87 colspan=5 style='height:18.0pt;mso-ignore:colspan'>Sala
-      de Estar</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=3 style='mso-ignore:colspan'>Copa</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=2 style='mso-ignore:colspan'>Suíte</td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=4 style='mso-ignore:colspan'>Depósito</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td colspan=6 class=xl108 width=100 style='border-right:1.0pt solid black;
-      width:76pt'>Edícula com Churrasqueira</td>
-      <td class=xl100 style='border-left:none'>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl87 style='height:8.1pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl87></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=24 style='mso-height-source:userset;height:18.0pt'>
-      <td height=24 class=xl87 colspan=5 style='height:18.0pt;mso-ignore:colspan'>Sala
-      de Jantar</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=3 style='mso-ignore:colspan'>Corredor</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=3 style='mso-ignore:colspan'>Banheiro</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=4 style='mso-ignore:colspan'>Sacada</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl87 style='height:8.1pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl96 width=15 style='width:11pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=24 style='mso-height-source:userset;height:18.0pt'>
-      <td height=24 class=xl87 colspan=4 style='height:18.0pt;mso-ignore:colspan'>Sala
-      de TV</td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=2 style='mso-ignore:colspan'>Hall</td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=3 style='mso-ignore:colspan'>Lavabo</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=4 style='mso-ignore:colspan'>Varanda</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl96 width=15 style='width:11pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl96 width=17 style='width:13pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl87 style='height:8.1pt'></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl101></td>
-      <td class=xl101></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl87 height=24 style='mso-height-source:userset;height:18.0pt'>
-      <td height=24 class=xl87 colspan=5 style='height:18.0pt;mso-ignore:colspan'>Sala
-      de Jogos</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=3 style='mso-ignore:colspan'>Quarto</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td colspan=3 class=xl105 style='border-right:1.0pt solid black'>Escritório</td>
-      <td class=xl100 style='border-left:none'>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87 colspan=6 style='mso-ignore:colspan'>Área de Serviço</td>
-      <td class=xl100>&nbsp;</td>
-      <td class=xl99>&nbsp;</td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-      <td class=xl87></td>
-     </tr>
-     <tr class=xl74 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl74 style='height:8.1pt'></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl86></td>
-      <td class=xl86></td>
-      <td class=xl86></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=6 style='mso-height-source:userset;height:5.1pt'>
-      <td height=6 class=xl74 style='height:5.1pt'></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl86></td>
-      <td class=xl86></td>
-      <td class=xl86></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl74 style='height:8.1pt'></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=24 style='mso-height-source:userset;height:18.0pt'>
-      <td colspan=41 rowspan=2 height=34 class=xl89 style='border-right:1.0pt solid black;
-      height:26.1pt'>OBS.:__________________________________________________________________________________________________</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=10 style='mso-height-source:userset;height:8.1pt'>
-      <td height=10 class=xl74 style='height:8.1pt'></td>
-      <td class=xl74></td>
-     </tr>
-     <tr class=xl74 height=24 style='mso-height-source:userset;height:18.0pt'>
-      <td height=24 class=xl102 style='height:18.0pt'>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl103>&nbsp;</td>
-      <td class=xl104>&nbsp;</td>
-      <td class=xl74></td>
-      <td class=xl74></td>
-     </tr>
-    </table>
+      </v:shape><![endif]--><!--[if !vml]-->
+			<table cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td height="5" width="14">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td width="10">&nbsp;</td>
+					</tr>
+					<tr>
+						<td height="16">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<!--[endif]--><!--[if !mso & vml]><span style='width:25.5pt;height:33.0pt'></span><![endif]--></td>
+			<td colspan="9" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="6" style="mso-height-source:userset;height:5.1pt">
+			<td colspan="13" height="6" style="height:5.1pt;mso-ignore:colspan">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td colspan="8" style="mso-ignore:colspan">&nbsp;</td>
+			<td colspan="9" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="28" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+			<td colspan="9" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr class="xl73" height="17" style="height:12.75pt">
+			<td class="xl72" colspan="14" height="17" style="height:12.75pt;mso-ignore:colspan">TIPO E QUANTIDADE DE C&Ocirc;MODOS</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+			<td class="xl73">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td colspan="41" height="17" style="height:12.75pt;mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="17" style="height:12.75pt">
+			<td class="xl76" colspan="4" height="17" style="height:12.75pt;mso-ignore:colspan">C&ocirc;modos</td>
+			<td class="xl74">&nbsp;</td>
+			<td colspan="36" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl76" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td colspan="36" style="mso-ignore:colspan">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="24" style="mso-height-source:userset;height:18.0pt">
+			<td class="xl87" colspan="2" height="24" style="height:18.0pt;mso-ignore:colspan">Sala</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="mso-ignore:colspan">Cozinha</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="mso-ignore:colspan">Closet</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="5" style="mso-ignore:colspan">Despensa</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl108" colspan="6" style="width:76pt" width="100">Depnd&ecirc;ncia de Empregado<span style="mso-spacerun:yes">&nbsp;</span></td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl87" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl96" style="width:11pt" width="15">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="24" style="mso-height-source:userset;height:18.0pt">
+			<td class="xl87" colspan="5" height="24" style="height:18.0pt;mso-ignore:colspan">Sala de Estar</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="mso-ignore:colspan">Copa</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="2" style="mso-ignore:colspan">Su&iacute;te</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="4" style="mso-ignore:colspan">Dep&oacute;sito</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl108" colspan="6" style="border-right:1.0pt solid black;
+      width:76pt" width="100">Ed&iacute;cula com Churrasqueira</td>
+			<td class="xl100" style="border-left:none">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl87" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="24" style="mso-height-source:userset;height:18.0pt">
+			<td class="xl87" colspan="5" height="24" style="height:18.0pt;mso-ignore:colspan">Sala de Jantar</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="mso-ignore:colspan">Corredor</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="mso-ignore:colspan">Banheiro</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="4" style="mso-ignore:colspan">Sacada</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl87" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl96" style="width:11pt" width="15">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="24" style="mso-height-source:userset;height:18.0pt">
+			<td class="xl87" colspan="4" height="24" style="height:18.0pt;mso-ignore:colspan">Sala de TV</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="2" style="mso-ignore:colspan">Hall</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="mso-ignore:colspan">Lavabo</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="4" style="mso-ignore:colspan">Varanda</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl96" style="width:11pt" width="15">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl96" style="width:13pt" width="17">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl87" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl101">&nbsp;</td>
+			<td class="xl101">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+		</tr>
+		<tr class="xl87" height="24" style="mso-height-source:userset;height:18.0pt">
+			<td class="xl87" colspan="5" height="24" style="height:18.0pt;mso-ignore:colspan">Sala de Jogos</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="mso-ignore:colspan">Quarto</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="3" style="border-right:1.0pt solid black">Escrit&oacute;rio</td>
+			<td class="xl100" style="border-left:none">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87" colspan="6" style="mso-ignore:colspan">&Aacute;rea de Servi&ccedil;o</td>
+			<td class="xl100">&nbsp;</td>
+			<td class="xl99">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+			<td class="xl87">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl74" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl86">&nbsp;</td>
+			<td class="xl86">&nbsp;</td>
+			<td class="xl86">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="6" style="mso-height-source:userset;height:5.1pt">
+			<td class="xl74" height="6" style="height:5.1pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl86">&nbsp;</td>
+			<td class="xl86">&nbsp;</td>
+			<td class="xl86">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="10" style="mso-height-source:userset;height:8.1pt">
+			<td class="xl74" height="10" style="height:8.1pt">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+			<td class="xl74">&nbsp;</td>
+		</tr>
+		<tr class="xl74" height="24" style="mso-height-source:userset;height:18.0pt">
+			<td class="xl89" colspan="41" height="34" rowspan="2" style="border-right:1.0pt solid black;
+      height:26.1pt">OBS.: <span id="obs"></span></td>
+		</tr>
+		<tr class="xl74" height="10" style="mso-height-source:userset;height:8.1pt">
+		</tr>
+		<tr class="xl74" height="24" style="mso-height-source:userset;height:18.0pt">
+			<td class="xl102" height="24" style="height:18.0pt">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl103">&nbsp;</td>
+			<td class="xl104">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
 
     <div class="loader">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
