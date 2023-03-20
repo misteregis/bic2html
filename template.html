@@ -2017,17 +2017,11 @@ xmlns="http://www.w3.org/TR/REC-html40">
             console.log("We are connected");
         });
 
-        function sendMessage(inputMessage) {
-            webSocket.send(inputMessage);
-        }
-
         const handleDragLeave = (ev) => {
             let tb = document.querySelector("table");
 
-            if (ev.target.localName === "body") {
-                tb.classList.remove("hover","danger");
-                tb.style.pointerEvents = null;
-            }
+            tb.classList.remove("hover","danger");
+            tb.style.pointerEvents = null;
         };
 
         const handleDragOver = (ev) => {
