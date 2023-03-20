@@ -1868,28 +1868,19 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
 
+    <script src="/socket.io/socket.io.js"></script>
     <script>
-        const webSocket = new WebSocket("ws://localhost:3000/");
+        const socket = io();
 
-        webSocket.onmessage = (event) => {
-            try {
-                let obj = JSON.parse(event.data);
+        socket.on('send_document', (obj) => {
+            for (key in obj) {
+                let element = document.querySelector(`#${key}`);
 
-                for (key in obj) {
-                    let element = document.querySelector(`#${key}`);
-
-                    if (element)
-                        element.textContent = obj[key];
-                }
-
-                console.log(obj);
-            } catch {
-                console.log(event.data);
+                if (element)
+                    element.textContent = obj[key];
             }
-        };
 
-        webSocket.addEventListener("open", () => {
-            console.log("We are connected");
+            console.log(obj);
         });
 
         const handleDragLeave = (ev) => {
@@ -1948,11 +1939,11 @@ xmlns="http://www.w3.org/TR/REC-html40">
 
             reader.addEventListener("load", (event) => {
                 ld.classList.remove("show");
-                webSocket.send(event.target.result);
+                socket.emit("send_document", event.target.result);
             });
 
-            reader.readAsArrayBuffer(file);
             ld.classList.add("show");
+            reader.readAsArrayBuffer(file);
         };
     </script>
 </body>
