@@ -4,6 +4,8 @@
   "description": "Extrai dados de um arquivo PDF (BIC) e insere no código HTML.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/misteregis/bic2html/issues"
   },
-  "homepage": "https://github.com/misteregis/bic2html#readme"
+  "homepage": "https://github.com/misteregis/bic2html#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pdf.js-extract": "^0.2.1",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
 }
