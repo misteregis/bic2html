@@ -1,0 +1,24 @@
+{
+  "name": "bic2html",
+  "version": "1.0.0",
+  "description": "Extrai dados de um arquivo PDF (BIC) e insere no código HTML.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misteregis/bic2html.git"
+  },
+  "keywords": [
+    "pdf",
+    "bic",
+    "html"
+  ],
+  "author": "misteregis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misteregis/bic2html/issues"
+  },
+  "homepage": "https://github.com/misteregis/bic2html#readme"
+}
