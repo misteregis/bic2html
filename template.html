@@ -1864,6 +1864,29 @@ xmlns="http://www.w3.org/TR/REC-html40">
     </table>
 
     <script>
+        const webSocket = new WebSocket("ws://localhost:3000/");
+
+        webSocket.onmessage = (event) => {
+            try {
+                let obj = JSON.parse(event.data);
+
+                for (key in obj) {
+                    let element = document.querySelector(`#${key}`);
+
+                    if (element)
+                        element.textContent = obj[key];
+                }
+
+                console.log(obj);
+            } catch {
+                console.log(event.data);
+            }
+        };
+
+        webSocket.addEventListener("open", () => {
+            console.log("We are connected");
+        });
+
         function sendMessage(inputMessage) {
             webSocket.send(inputMessage);
         }
@@ -1920,7 +1943,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
             ev.preventDefault();
         };
 
-        const readDocument = (file) => console.log(file);
+        const readDocument = (file) => {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', (event) => webSocket.send(event.target.result));
+
+            reader.readAsArrayBuffer(file);
+        };
     </script>
-    </body>
+</body>
 </html>
