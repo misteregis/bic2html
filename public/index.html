@@ -182,8 +182,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 
 <body ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
 
-    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:
-     collapse;table-layout:fixed;width:619pt;margin: 15px auto;">
+    <table border="0" cellpadding="0" cellspacing="0" style="table-layout:fixed;width:619pt;margin: 15px auto;">
         <colgroup>
             <col span="11" style="mso-width-source:userset;mso-width-alt:621;
         width:13pt" width="17" />
@@ -238,11 +237,29 @@ xmlns="http://www.w3.org/TR/REC-html40">
                 <td style="width:13pt" width="17">&nbsp;</td>
             </tr>
             <tr height="17" style="height:12.75pt">
-                <td class="xl129" colspan="24" height="17" style="height:12.75pt">MUNICIPIO DE NITER&Oacute;I</td>
+                <td class="xl129" colspan="24" height="17" style="height:12.75pt">
+                    <table cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="xl129" colspan="24" style="height:12.75pt;
+                width:313pt" width="410" height="17"><span style="mso-ignore:vglayout2">MUNICIPIO DE NITERÓI</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
                 <td colspan="17" style="mso-ignore:colspan">&nbsp;</td>
             </tr>
             <tr height="17" style="height:12.75pt">
-                <td class="xl129" colspan="24" height="17" style="height:12.75pt">SECRETARIA MUNICIPAL DE FAZENDA</td>
+                <td class="xl129" colspan="24" height="17" style="height:12.75pt">
+                    <table cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="xl129" colspan="24" style="height:12.75pt;
+                width:313pt" width="410" height="17"><span style="mso-ignore:vglayout2">SECRETARIA MUNICIPAL DE FAZENDA</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
                 <td colspan="17" style="mso-ignore:colspan">&nbsp;</td>
             </tr>
             <tr height="17" style="height:12.75pt">
@@ -416,7 +433,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
             </tr>
             <tr class="xl74" height="16" style="height:12.0pt">
                 <td class="xl120" colspan="2" height="97" rowspan="6" style="border-right:1.0pt solid black;
-        border-bottom:1.0pt solid black;height:72.75pt;writing-mode: vertical-lr;-ms-transform: rotate(180deg);transform: rotate(180deg);">N&ordm; PAVIMENTOS</td>
+                border-bottom:1.0pt solid black;height:72.75pt;-ms-transform: rotate(180deg);">
+                    <span style="position: relative;transform: rotate(180deg);writing-mode: vertical-lr;-ms-transform: rotate(180deg);">Nº PAVIMENTOS</span>
+                </td>
                 <td class="xl74">&nbsp;</td>
                 <td class="xl77" colspan="4" style="mso-ignore:colspan">01- Casa</td>
                 <td class="xl78">&nbsp;</td>
@@ -537,7 +556,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
             </tr>
             <tr class="xl74" height="17" style="mso-height-source:userset;height:12.75pt">
                 <td class="xl130" colspan="2" height="34" rowspan="2" style="border-right:1.0pt solid black;
-        border-bottom:1.0pt solid black;height:25.5pt">&nbsp;</td>
+        border-bottom:1.0pt solid black;height:25.5pt;border-top: 0;">&nbsp;</td>
                 <td class="xl74">&nbsp;</td>
                 <td class="xl80">&nbsp;</td>
                 <td class="xl74">&nbsp;</td>
@@ -1931,13 +1950,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
         };
 
         const readDocument = (file) => {
+            const ld = document.querySelector(".loader");
             const reader = new FileReader();
 
             reader.addEventListener("load", (event) => {
                 socket.emit("send_document", event.target.result);
             });
 
-            document.querySelector(".loader").classList.add("show");
+            ld.classList.add("show");
             reader.readAsArrayBuffer(file);
         };
     </script>
