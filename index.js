@@ -8,19 +8,19 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
+const tryParseInt = (value) => {
+    if (!value) return value;
+
+    if (!isNaN(value))
+        return parseInt(value);
+
+    return value;
+}
+
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
-app.get('/', function (req, res) {
-    res.set('Content-Type', 'text/html');
-
-    fs.readFile(`${__dirname}/template.html`, 'utf8', (err, text) => {
-        text = text.replace('{{ hostname }}', req.hostname);
-        text = text.replace('{{ WS_PORT }}', PORT);
-
-        res.send(text);
-    });
-});
+app.use(express.static('public'));
 
 http.listen(process.env.PORT || 3000, function() {
     let host = http.address().address
@@ -42,11 +42,11 @@ io.on('connection', function(socket) {
 
             let arr = data.pages[0].content;
             let obj = {
-                "matricula": arr[20].str,
+                "matricula": tryParseInt(arr[20].str),
                 "logradouro": arr[84].str.replace(`,${arr[84].str.split(",").pop()}`, ''),
-                "numero": arr[84].str.split(",").pop().replace(/\D/g, ''),
+                "numero": tryParseInt(arr[84].str.split(",").pop().replace(/\D/g, '')),
                 "quadra": `${arr[56].str.slice(1).trim()}/${arr[60].str.slice(1).trim()}`,
-                "lote": arr[64].str,
+                "lote": tryParseInt(arr[64].str),
                 "bairro": arr[80].str.replace(/\W|\d/g, ''),
                 "cep": `${arr[50].str.substring(0, 5)}-${arr[50].str.substring(5)}`,
                 "cpf-cnpj": arr[34].str
