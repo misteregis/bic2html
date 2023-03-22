@@ -228,6 +228,32 @@ img {
     border: 1px solid black;
 }
 
+.overflow-hidden { overflow: hidden; }
+
+.error {
+    background-color: white;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: fixed;
+    font-weight: lighter;
+    font-size: 22px;
+    color: #ce5656;
+    top: 0;
+}
+
+.error.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
 #matricula { width: 155px; }
 #logradouro { width: 445px; }
 #numero { width: 66px; }

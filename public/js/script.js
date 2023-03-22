@@ -16,7 +16,16 @@ socket.on("send_document", (obj) => {
     handleDragLeave();
 
     if (obj.error) {
-        alert("Erro na extração dos dados, veja o console.");
+        let err = document.querySelector(".error");
+
+        err.classList.add("show");
+        document.body.classList.add("overflow-hidden");
+        document.querySelectorAll("[id]").forEach(e => e.innerHTML = "&nbsp;");
+
+        setTimeout(() => {
+            err.classList.remove("show");
+            document.body.classList.remove("overflow-hidden");
+        }, 2500);
 
         return console.log(obj.data);
     }
@@ -46,6 +55,9 @@ const handleDragOver = (ev) => {
     let mimetype = items[0].type || "[desconhecido]";
 
     tb.style.pointerEvents = "none";
+
+    document.body.classList.remove("overflow-hidden");
+    document.querySelector(".error").classList.remove("show");
 
     if (items.length === 1 && items[0].type === "application/pdf") {
         ev.dataTransfer.dropEffect = "move";
