@@ -17,6 +17,56 @@ const tryParseInt = (value) => {
     return value;
 }
 
+const getValue = (data, key) => data[key].str;
+
+const getJSON = (data) => {
+    let obj = {};
+    let k = {
+        matricula: 20,
+        logradouro: 84,
+        setor: 56,
+        quadra: 60,
+        lote: 64,
+        bairro: 80,
+        cep: 50,
+        cpf_cnpj: 34
+    };
+
+    try {
+        let arr = data.pages[0].content;
+
+        if (!arr.find(y => y.str === 'Matrícula :')) {
+            k.logradouro = 24;
+            k.setor = 65;
+            k.quadra = 69;
+            k.lote = 73;
+            k.bairro = 28;
+            k.cep = 49;
+            k.cpf_cnpj = 41;
+        }
+
+        let logradouro = getValue(arr, k.logradouro);
+        let cep = getValue(arr, k.cep).replace(/\D/g, '');
+        let setor = getValue(arr, k.setor).slice(-3).trim();
+        let quadra = getValue(arr, k.quadra).slice(-3).trim();
+
+        obj = {
+            "matricula": getValue(arr, k.matricula),
+            "logradouro": logradouro.replace(`,${logradouro.split(",").pop()}`, '').replace(/\d+\s+-\s+/g, '').trim(),
+            "numero": logradouro.split(",").pop().replace(/\D/g, ''),
+            "quadra": `${setor}/${quadra}`,
+            "lote": getValue(arr, k.lote),
+            "bairro": getValue(arr, k.bairro).replace(/\W|\d/g, ''),
+            "cep": `${cep.substring(0, 5)}-${cep.substring(5)}`,
+            "cpf-cnpj": getValue(arr, k.cpf_cnpj)
+        };
+    } catch {
+        obj = { error: true, data };
+    }
+
+    return obj;
+};
+
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
@@ -40,26 +90,7 @@ io.on('connection', function(socket) {
         pdfExtract.extractBuffer(buffer, {}, (err, data) => {
             if (err) return console.log(err);
 
-            let obj = {};
-
-            try {
-                let arr = data.pages[0].content;
-
-                obj = {
-                    "matricula": tryParseInt(arr[20].str),
-                    "logradouro": arr[84].str.replace(`,${arr[84].str.split(",").pop()}`, '').replace(/\d+\s+-\s+/g, '').trim(),
-                    "numero": tryParseInt(arr[84].str.split(",").pop().replace(/\D/g, '')),
-                    "quadra": `${arr[56].str.slice(1).trim()}/${arr[60].str.slice(1).trim()}`,
-                    "lote": tryParseInt(arr[64].str),
-                    "bairro": arr[80].str.replace(/\W|\d/g, ''),
-                    "cep": `${arr[50].str.substring(0, 5)}-${arr[50].str.substring(5)}`,
-                    "cpf-cnpj": arr[34].str
-                };
-            } catch {
-                obj = { error: true, data };
-            }
-
-            socket.emit('send_document', obj);
+            socket.emit('send_document', getJSON(data));
         });
     });
 });
