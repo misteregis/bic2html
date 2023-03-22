@@ -43,7 +43,7 @@ io.on('connection', function(socket) {
             let arr = data.pages[0].content;
             let obj = {
                 "matricula": tryParseInt(arr[20].str),
-                "logradouro": arr[84].str.replace(`,${arr[84].str.split(",").pop()}`, ''),
+                "logradouro": arr[84].str.replace(`,${arr[84].str.split(",").pop()}`, '').replace(/\d+\s+-\s+/g, '').trim(),
                 "numero": tryParseInt(arr[84].str.split(",").pop().replace(/\D/g, '')),
                 "quadra": `${arr[56].str.slice(1).trim()}/${arr[60].str.slice(1).trim()}`,
                 "lote": tryParseInt(arr[64].str),

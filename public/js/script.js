@@ -76,8 +76,7 @@ const readDocument = (file) => {
 (function(){
     ["handleDrop", "handleDragOver", "handleDragLeave"].forEach(fn => {
         let event = fn.replace("handle", "").toLowerCase();
-        // console.log(eval(`${fn}('x')`))
-        console.log(event);
+
         document.body.addEventListener(event, eval(`${fn}`));
     });
 })();
