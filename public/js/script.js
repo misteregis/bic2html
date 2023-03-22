@@ -25,19 +25,19 @@ socket.on("send_document", (obj) => {
         setTimeout(() => {
             err.classList.remove("show");
             document.body.classList.remove("overflow-hidden");
-        }, 2500);
+        }, 3500);
 
-        return console.log(obj.data);
+        err.querySelector("span").textContent = obj.error;
+    } else {
+        for (key in obj) {
+            let element = document.querySelector(`#${key}`);
+
+            if (element)
+                element.innerHTML = `&nbsp;${obj[key]}`;
+        }
+
+        console.log(obj);
     }
-
-    for (key in obj) {
-        let element = document.querySelector(`#${key}`);
-
-        if (element)
-            element.innerHTML = `&nbsp;${obj[key]}`;
-    }
-
-    console.log(obj);
 });
 
 const handleDragLeave = (ev) => {

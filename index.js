@@ -60,21 +60,24 @@ const getJSON = (data) => {
             "cep": `${cep.substring(0, 5)}-${cep.substring(5)}`,
             "cpf-cnpj": getValue(arr, k.cpf_cnpj)
         };
-    } catch {
-        obj = { error: true, data };
+    } catch (e) {
+        obj = { error: e.message };
     }
 
     return obj;
 };
 
-let http = require('http').createServer(app);
-let io = require('socket.io')(http);
+let httpServer = require('http').createServer(app);
+let io = require('socket.io')(httpServer, {
+    // definindo tamanho máximo do buffer para 100mb. padrão 1mb (1e6)
+    maxHttpBufferSize: 1e8
+});
 
 app.use(express.static('public'));
 
-http.listen(process.env.PORT || 3000, function() {
-    let host = http.address().address
-    let port = http.address().port
+httpServer.listen(PORT, function() {
+    let host = httpServer.address().address
+    let port = httpServer.address().port
 
     console.log('App listening at http://%s:%s', host, port)
 });
@@ -87,8 +90,10 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send_document', (buffer) => {
-        pdfExtract.extractBuffer(buffer, {}, (err, data) => {
-            if (err) return console.log(err);
+        let options = { firstPage: 1, lastPage: 1 };
+
+        pdfExtract.extractBuffer(buffer, options, (err, data) => {
+            if (err) return { error: true, data: err };
 
             socket.emit('send_document', getJSON(data));
         });
