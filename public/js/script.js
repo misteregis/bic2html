@@ -1,7 +1,26 @@
 
 const socket = io();
 
-socket.on('send_document', (obj) => {
+let connected = null;
+
+socket.on("disconnect", () => connected = socket.connected);
+socket.on("connect", () => {
+    if (connected === null)
+        connected = socket.connected;
+
+    if (!connected)
+        location.reload();
+});
+
+socket.on("send_document", (obj) => {
+    handleDragLeave();
+
+    if (obj.error) {
+        alert("Erro na extração dos dados, veja o console.");
+
+        return console.log(obj.data);
+    }
+
     for (key in obj) {
         let element = document.querySelector(`#${key}`);
 
@@ -9,7 +28,6 @@ socket.on('send_document', (obj) => {
             element.innerHTML = `&nbsp;${obj[key]}`;
     }
 
-    handleDragLeave();
     console.log(obj);
 });
 

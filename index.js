@@ -40,17 +40,24 @@ io.on('connection', function(socket) {
         pdfExtract.extractBuffer(buffer, {}, (err, data) => {
             if (err) return console.log(err);
 
-            let arr = data.pages[0].content;
-            let obj = {
-                "matricula": tryParseInt(arr[20].str),
-                "logradouro": arr[84].str.replace(`,${arr[84].str.split(",").pop()}`, '').replace(/\d+\s+-\s+/g, '').trim(),
-                "numero": tryParseInt(arr[84].str.split(",").pop().replace(/\D/g, '')),
-                "quadra": `${arr[56].str.slice(1).trim()}/${arr[60].str.slice(1).trim()}`,
-                "lote": tryParseInt(arr[64].str),
-                "bairro": arr[80].str.replace(/\W|\d/g, ''),
-                "cep": `${arr[50].str.substring(0, 5)}-${arr[50].str.substring(5)}`,
-                "cpf-cnpj": arr[34].str
-            };
+            let obj = {};
+
+            try {
+                let arr = data.pages[0].content;
+
+                obj = {
+                    "matricula": tryParseInt(arr[20].str),
+                    "logradouro": arr[84].str.replace(`,${arr[84].str.split(",").pop()}`, '').replace(/\d+\s+-\s+/g, '').trim(),
+                    "numero": tryParseInt(arr[84].str.split(",").pop().replace(/\D/g, '')),
+                    "quadra": `${arr[56].str.slice(1).trim()}/${arr[60].str.slice(1).trim()}`,
+                    "lote": tryParseInt(arr[64].str),
+                    "bairro": arr[80].str.replace(/\W|\d/g, ''),
+                    "cep": `${arr[50].str.substring(0, 5)}-${arr[50].str.substring(5)}`,
+                    "cpf-cnpj": arr[34].str
+                };
+            } catch {
+                obj = { error: true, data };
+            }
 
             socket.emit('send_document', obj);
         });
