@@ -1,7 +1,7 @@
 
 const socket = io();
 
-let debug = false;
+let debug = location.search.slice(1) === "debug";
 let connected = null;
 
 socket.on("disconnect", () => connected = socket.connected);
@@ -16,19 +16,30 @@ socket.on("connect", () => {
 socket.on("send_document", (obj) => {
     handleDragLeave();
 
+    let debug_data = obj.data;
+
+    delete obj.data;
+
     if (obj.error) {
         let err = document.querySelector(".error");
+        let { message, stack } = obj;
 
         err.classList.add("show");
         document.body.classList.add("overflow-hidden");
         document.querySelectorAll("[id]").forEach(e => e.innerHTML = "&nbsp;");
 
-        setTimeout(() => {
-            err.classList.remove("show");
-            document.body.classList.remove("overflow-hidden");
-        }, 3500);
+        if (debug)
+            message = stack;
+        else {
+            setTimeout(() => {
+                err.classList.remove("show");
+                document.body.classList.remove("overflow-hidden");
+            }, 3500);
+        }
 
-        err.querySelector("span").textContent = obj.error;
+        err.querySelector("span").textContent = message;
+
+        console.error(obj.stack);
     } else {
         for (key in obj) {
             let element = document.querySelector(`#${key}`);
@@ -41,7 +52,7 @@ socket.on("send_document", (obj) => {
     }
 
     if (debug)
-        console.info(obj.data);
+        console.info(debug_data);
 });
 
 const handleDragLeave = (ev) => {

@@ -12,7 +12,20 @@ const tryParseInt = (value) => {
     return value;
 }
 
-const getValue = (data, key) => data[key].str;
+const getValue = (data, key, keys = []) => {
+    let value = data[key].str;
+
+    for (let i = 0; i < keys.length; i++) {
+        const k = keys[i];
+
+        if (!value.match(/\d/g))
+            value = getValue(data, k);
+        else
+            break;
+    }
+
+    return value;
+};
 
 const getJSON = (data, debug) => {
     let obj = {};
@@ -40,23 +53,30 @@ const getJSON = (data, debug) => {
             k.cpf_cnpj = 41;
         }
 
+        let matricula = getValue(arr, k.matricula);
         let logradouro = getValue(arr, k.logradouro);
         let cep = getValue(arr, k.cep).replace(/\D/g, '');
-        let setor = getValue(arr, k.setor).slice(-3).trim();
-        let quadra = getValue(arr, k.quadra).slice(-3).trim();
+        let setor = getValue(arr, k.setor, [ 77 ]).slice(-3);
+        let quadra = getValue(arr, k.quadra, [ 81 ]).slice(-3);
+        let lote = getValue(arr, k.lote, [ 85 ]);
 
         obj = {
-            "matricula": getValue(arr, k.matricula),
+            "matricula": `${matricula.slice(0, -1)}-${matricula.slice(-1)}`,
             "logradouro": logradouro.replace(`,${logradouro.split(",").pop()}`, '').replace(/\d+\s+-\s+/g, '').trim(),
             "numero": logradouro.split(",").pop().replace(/\D/g, ''),
             "quadra": `${setor}/${quadra}`,
-            "lote": getValue(arr, k.lote),
+            "lote": lote,
             "bairro": getValue(arr, k.bairro).replace(/\W|\d/g, ''),
             "cep": `${cep.substring(0, 5)}-${cep.substring(5)}`,
             "cpf-cnpj": getValue(arr, k.cpf_cnpj)
         };
+
+        for (key in obj)
+            obj[key] = tryParseInt(obj[key]);
     } catch (e) {
-        obj = { error: e.message };
+        let { message, stack } = e;
+
+        obj = { error: true, message, stack };
     }
 
     if (debug)
