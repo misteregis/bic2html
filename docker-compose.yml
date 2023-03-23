@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bic2html
+    hostname: bic2html
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      TZ: "America/Argentina/Buenos_Aires"
+    ports:
+      - "3004:3000"
+    networks:
+      - network
+
+networks:
+  network:
+    external:
+      name: rede_interna
