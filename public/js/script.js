@@ -1,6 +1,7 @@
 
 const socket = io();
 
+let debug = false;
 let connected = null;
 
 socket.on("disconnect", () => connected = socket.connected);
@@ -38,6 +39,9 @@ socket.on("send_document", (obj) => {
 
         console.log(obj);
     }
+
+    if (debug)
+        console.info(obj.data);
 });
 
 const handleDragLeave = (ev) => {
@@ -96,7 +100,9 @@ const readDocument = (file) => {
     const reader = new FileReader();
 
     reader.addEventListener("load", (event) => {
-        socket.emit("send_document", event.target.result);
+        let buffer = event.target.result;
+
+        socket.emit("send_document", buffer, debug);
     });
 
     ld.classList.add("show");

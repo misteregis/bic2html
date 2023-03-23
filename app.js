@@ -1,12 +1,7 @@
 const express = require('express');
 const PDFExtract = require('pdf.js-extract').PDFExtract;
 const pdfExtract = new PDFExtract();
-const fs = require('fs');
 const app = express();
-
-require('dotenv').config();
-
-const PORT = process.env.PORT || 3000;
 
 const tryParseInt = (value) => {
     if (!value) return value;
@@ -19,7 +14,7 @@ const tryParseInt = (value) => {
 
 const getValue = (data, key) => data[key].str;
 
-const getJSON = (data) => {
+const getJSON = (data, debug) => {
     let obj = {};
     let k = {
         matricula: 20,
@@ -64,6 +59,9 @@ const getJSON = (data) => {
         obj = { error: e.message };
     }
 
+    if (debug)
+        obj.data = data;
+
     return obj;
 };
 
@@ -75,7 +73,7 @@ let io = require('socket.io')(httpServer, {
 
 app.use(express.static('public'));
 
-httpServer.listen(PORT, function() {
+httpServer.listen(3000, function() {
     let host = httpServer.address().address
     let port = httpServer.address().port
 
@@ -89,13 +87,13 @@ io.on('connection', function(socket) {
         console.log('Client disconnected');
     });
 
-    socket.on('send_document', (buffer) => {
+    socket.on('send_document', (buffer, debug) => {
         let options = { firstPage: 1, lastPage: 1 };
 
         pdfExtract.extractBuffer(buffer, options, (err, data) => {
             if (err) return { error: true, data: err };
 
-            socket.emit('send_document', getJSON(data));
+            socket.emit('send_document', getJSON(data, debug));
         });
     });
 });
