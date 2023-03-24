@@ -1,8 +1,15 @@
+const insc = document.querySelector("#matricula");
+const table = document.querySelector(".table");
+const dl = document.querySelector(".download");
+const ld = document.querySelector(".loader");
+const err = document.querySelector(".error");
 
+const delay = 3500;
 const socket = io();
 
 let debug = location.search.slice(1) === "debug";
 let connected = null;
+let _timeout = null;
 
 socket.on("disconnect", () => connected = socket.connected);
 socket.on("connect", () => {
@@ -21,25 +28,18 @@ socket.on("send_document", (obj) => {
     delete obj.data;
 
     if (obj.error) {
-        let err = document.querySelector(".error");
         let { message, stack } = obj;
 
         err.classList.add("show");
         document.body.classList.add("overflow-hidden");
         document.querySelectorAll("[id]").forEach(e => e.innerHTML = "&nbsp;");
 
-        if (debug)
+        if (debug) {
             message = stack;
-        else {
-            setTimeout(() => {
-                err.classList.remove("show");
-                document.body.classList.remove("overflow-hidden");
-            }, 3500);
+            console.debug(obj.stack);
         }
 
-        err.querySelector("span").textContent = message;
-
-        console.error(obj.stack);
+        error(message, debug ? delay * 10 : delay);
     } else {
         for (key in obj) {
             let element = document.querySelector(`#${key}`);
@@ -48,19 +48,32 @@ socket.on("send_document", (obj) => {
                 element.innerHTML = `&nbsp;${obj[key]}`;
         }
 
+        dl.classList.add("show");
+
         console.log(obj);
     }
 
     if (debug)
-        console.info(debug_data);
+        console.debug(debug_data);
 });
+
+const loader = (action = "show") => {
+    const method = action === "show" ? "add" : "remove";
+
+    dl.style.zIndex = null;
+
+    if (method === "add")
+        dl.style.zIndex = 0;
+
+    ld.classList[method]("show");
+};
 
 const handleDragLeave = (ev) => {
     let tb = document.querySelector("table");
 
-    document.querySelector(".loader").classList.remove("show");
+    loader("hide");
 
-    tb.classList.remove("hover","danger");
+    document.body.classList.remove("hover","danger");
     tb.style.pointerEvents = null;
 };
 
@@ -72,14 +85,14 @@ const handleDragOver = (ev) => {
     tb.style.pointerEvents = "none";
 
     document.body.classList.remove("overflow-hidden");
-    document.querySelector(".error").classList.remove("show");
+    err.classList.remove("show");
 
     if (items.length === 1 && items[0].type === "application/pdf") {
         ev.dataTransfer.dropEffect = "move";
-        tb.classList.add("hover");
+        document.body.classList.add("hover");
     } else {
         ev.dataTransfer.dropEffect = "none";
-        tb.classList.add("danger");
+        document.body.classList.add("danger");
 
         let msg = "Apenas um arquivo";
 
@@ -107,7 +120,6 @@ const handleDrop = (ev) => {
 };
 
 const readDocument = (file) => {
-    const ld = document.querySelector(".loader");
     const reader = new FileReader();
 
     reader.addEventListener("load", (event) => {
@@ -116,11 +128,54 @@ const readDocument = (file) => {
         socket.emit("send_document", buffer, debug);
     });
 
-    ld.classList.add("show");
+    loader("show");
+
+    dl.classList.remove("show");
     reader.readAsArrayBuffer(file);
 };
 
-(function(){
+const error = (message, timeout = delay, title = "Ocorreu um erro na extração dos dados") => {
+    err.querySelector("span").textContent = message;
+    err.querySelector("h1").textContent = title;
+    err.classList.add("show");
+
+    if (_timeout) clearTimeout(_timeout);
+
+    _timeout = setTimeout(() => err.classList.remove("show"), timeout);
+};
+
+const download = () => {
+    let m = insc.textContent.trim();
+    let filename = `BIC_[${m}]`;
+
+    if (m) {
+        let opt = {
+            margin:       1,
+            filename:     `${filename}_${Math.round(+new Date() / 1000)}.pdf`,
+            image:        { type: 'webp', quality: 1 },
+            html2canvas:  { scale: 1, width: 825, windowWidth: 825 },
+            jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' }
+        };
+
+        loader("show");
+
+        html2pdf().from(table).set(opt).toPdf().get("pdf").then((pdf) => {
+            loader("hide");
+
+            pdf.setProperties({
+                author: `by ${document.title}`,
+                subject: `Matrícula: ${m}`
+            });
+        }).save();
+    } else
+        error(null, delay, "É obrigatório ter uma matrícula.");
+};
+
+(() => {
+    window.jsPDF = window.jspdf.jsPDF;
+
+    document.querySelector(".download").addEventListener("click", download);
+
     ["handleDrop", "handleDragOver", "handleDragLeave"].forEach(fn => {
         let event = fn.replace("handle", "").toLowerCase();
 

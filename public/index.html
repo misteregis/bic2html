@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <table>
+    <table class="table">
         <tr>
             <td class="valign-middle">
                 <table class="uppercase">
@@ -20,7 +20,7 @@
                 </table>
             </td>
             <td align="right">
-                <img src="images/logo.png" alt="Fazenda">
+                <img class="logo" src="images/logo.png" alt="Fazenda">
             </td>
         </tr>
 
@@ -69,7 +69,7 @@
                     </tr>
 
                     <tr>
-                        <td class="text-center pb-3" width="41" style="vertical-align:bottom">
+                        <td class="text-center pb-3">
                             <span class="vertical uppercase">Nº Pavimentos</span>
                             <div class="block b-top">&nbsp;</div>
                         </td>
@@ -446,9 +446,22 @@
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
 
-    <h1 class="error">Ocorreu um erro na extração dos dados:<span>&nbsp;</span></h1>
+    <!-- Message Error -->
+    <div class="error"><h1>&nbsp;</h1><span>&nbsp;</span></div>
+
+    <button class="download" type="button">
+        <svg viewBox="40 40 400 350" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path fill="white" opacity="1.00" d=" M 234.47 92.43 C 237.25 89.21 242.76 89.21 245.54 92.43 C 248.25 95.28 247.37 99.49 247.51 103.04 C 247.49 165.16 247.49 227.27 247.51 289.39 C 268.18 268.74 288.81 248.04 309.48 227.38 C 312.29 224.20 317.74 224.18 320.54 227.39 C 323.36 230.29 323.11 235.34 320.11 238.03 C 295.26 262.90 270.39 287.77 245.52 312.62 C 242.69 315.78 237.30 315.78 234.48 312.62 C 209.94 288.13 185.48 263.57 160.92 239.11 C 158.07 236.79 156.38 232.71 158.21 229.24 C 160.24 224.52 167.21 223.50 170.54 227.40 C 191.20 248.05 211.82 268.74 232.48 289.39 C 232.52 227.26 232.50 165.14 232.49 103.02 C 232.63 99.47 231.75 95.26 234.47 92.43 Z" />
+                <path fill="white" opacity="1.00" d=" M 57.33 300.48 C 61.78 298.58 67.38 302.12 67.44 306.99 C 67.70 318.32 67.22 329.68 67.67 341.00 C 68.97 359.36 85.59 374.92 104.00 374.97 C 194.67 375.02 285.34 375.02 376.01 374.97 C 394.44 374.92 411.08 359.30 412.33 340.92 C 412.77 329.65 412.31 318.35 412.55 307.08 C 412.59 302.80 416.93 299.30 421.12 300.08 C 424.94 300.55 427.81 304.30 427.50 308.11 C 427.44 319.06 427.65 330.01 427.38 340.96 C 426.31 362.05 411.07 381.40 390.89 387.55 C 381.58 390.75 371.63 389.90 361.96 390.00 C 275.95 389.99 189.95 390.03 103.94 389.98 C 84.03 389.85 64.99 377.15 57.05 358.92 C 53.80 351.75 52.34 343.84 52.49 335.99 C 52.53 326.65 52.47 317.32 52.51 307.99 C 52.30 304.77 54.29 301.59 57.33 300.48 Z" />
+            </g>
+        </svg>
+    </button>
 
     <script src="socket.io/socket.io.js"></script>
+    <script src="js/jspdf.umd.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/html2pdf.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
