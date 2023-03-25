@@ -3,6 +3,7 @@ const table = document.querySelector(".table");
 const dl = document.querySelector(".download");
 const ld = document.querySelector(".loader");
 const err = document.querySelector(".error");
+const body = document.body;
 
 const delay = 3500;
 const socket = io();
@@ -28,18 +29,18 @@ socket.on("send_document", (obj) => {
     delete obj.data;
 
     if (obj.error) {
-        let { message, stack } = obj;
+        let { stack } = obj;
 
         err.classList.add("show");
-        document.body.classList.add("overflow-hidden");
+
         document.querySelectorAll("[id]").forEach(e => e.innerHTML = "&nbsp;");
 
         if (debug) {
-            message = stack;
-            console.debug(obj.stack);
-        }
+            console.debug(stack);
 
-        error(message, debug ? delay * 10 : delay);
+            error(stack, delay * 10);
+        } else
+            error(null);
     } else {
         for (key in obj) {
             let element = document.querySelector(`#${key}`);
@@ -73,7 +74,7 @@ const handleDragLeave = (ev) => {
 
     loader("hide");
 
-    document.body.classList.remove("hover","danger");
+    body.classList.remove("hover","danger");
     tb.style.pointerEvents = null;
 };
 
@@ -84,15 +85,15 @@ const handleDragOver = (ev) => {
 
     tb.style.pointerEvents = "none";
 
-    document.body.classList.remove("overflow-hidden");
+    body.classList.remove("overflow-hidden");
     err.classList.remove("show");
 
     if (items.length === 1 && items[0].type === "application/pdf") {
         ev.dataTransfer.dropEffect = "move";
-        document.body.classList.add("hover");
+        body.classList.add("hover");
     } else {
         ev.dataTransfer.dropEffect = "none";
-        document.body.classList.add("danger");
+        body.classList.add("danger");
 
         let msg = "Apenas um arquivo";
 
@@ -134,14 +135,18 @@ const readDocument = (file) => {
     reader.readAsArrayBuffer(file);
 };
 
-const error = (message, timeout = delay, title = "Ocorreu um erro na extração dos dados") => {
+const error = (message, timeout, title = "Ocorreu um erro na extração dos dados") => {
+    err.querySelector("h1").textContent = title + (!message ? "." : "");
     err.querySelector("span").textContent = message;
-    err.querySelector("h1").textContent = title;
+    body.classList.add("overflow-hidden");
     err.classList.add("show");
 
     if (_timeout) clearTimeout(_timeout);
 
-    _timeout = setTimeout(() => err.classList.remove("show"), timeout);
+    _timeout = setTimeout(() => {
+        body.classList.remove("overflow-hidden");
+        err.classList.remove("show");
+    }, timeout || delay);
 };
 
 const download = () => {
@@ -168,7 +173,7 @@ const download = () => {
             });
         }).save();
     } else
-        error(null, delay, "É obrigatório ter uma matrícula.");
+        error(null, null, "É obrigatório ter uma matrícula.");
 };
 
 (() => {
@@ -179,6 +184,6 @@ const download = () => {
     ["handleDrop", "handleDragOver", "handleDragLeave"].forEach(fn => {
         let event = fn.replace("handle", "").toLowerCase();
 
-        document.body.addEventListener(event, eval(`${fn}`));
+        body.addEventListener(event, eval(`${fn}`));
     });
 })();
