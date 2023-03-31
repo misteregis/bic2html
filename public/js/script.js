@@ -8,7 +8,8 @@ const body = document.body;
 const delay = 3500;
 const socket = io();
 
-let debug = location.search.slice(1) === "debug";
+const debug = location.search.slice(1) === "debug";
+
 let connected = null;
 let _timeout = null;
 
@@ -42,11 +43,13 @@ socket.on("send_document", (obj) => {
         } else
             error(null);
     } else {
-        for (key in obj) {
-            let element = document.querySelector(`#${key}`);
+        for (const key in obj) {
+            const id = `#${key.kebabCase()}`;
+            const element = document.querySelector(id);
 
-            if (element)
-                element.innerHTML = `&nbsp;${obj[key]}`;
+            if (element) {
+                element.innerHTML = `<b>${obj[key]}</b>`;
+            }
         }
 
         dl.classList.add("show");
@@ -175,6 +178,43 @@ const download = () => {
     } else
         error(null, null, "É obrigatório ter uma matrícula.");
 };
+
+const ucfirst = (text) => {
+    let string = text.toLowerCase();
+
+    return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
+};
+
+const kebabCase = (str) => caseSeparator(str, "-");
+const snakeCase = (str) => caseSeparator(str, "_");
+
+function caseSeparator(str, separator) {
+    let caller = caseSeparator.caller ? caseSeparator.caller.name : null;
+
+    let example = {
+        "Usando function": { "Código": `${caller}("numberPhone");`, "Resultado": `"number${separator}phone"` },
+        "Usando prototype": { "Código": `"zipCode".${caller}();`, "Resultado": `"zip${separator}code"` }
+    };
+
+    if (!str) {
+        console.table(example);
+        console.warn("${caller}(): {str} é obrigatório.");
+
+        return example;
+    }
+
+    try {
+        str = str.replace(/([a-z])([A-Z])/g, '$1-$2');
+
+        return str.match(/[a-zA-Z]+/g).join(separator).toLowerCase();
+    } catch {
+        return str;
+    }
+};
+
+String.prototype.ucfirst = function () { return ucfirst(this) };
+String.prototype.kebabCase = function () { return kebabCase(this) };
+String.prototype.snakeCase = function () { return snakeCase(this) };
 
 (() => {
     window.jsPDF = window.jspdf.jsPDF;

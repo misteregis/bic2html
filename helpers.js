@@ -1,3 +1,7 @@
+const removeAccents = (text) => {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+};
+
 const tryParseInt = (value) => {
     if (!value) {
         return value;
@@ -10,13 +14,21 @@ const tryParseInt = (value) => {
     return value;
 }
 
-const getValue = (data, key, keys = []) => {
-    let value = data[key].str;
+const getValue = (text) => {
+    const find = `${text}:`.removeAccents().toLowerCase();
 
-    for (const k of keys) {
-        if (!value.match(/\d/g)) {
-            value = getValue(data, k);
-        } else {
+    let value = '';
+
+    for (const i in data) {
+        const text = data[i].str.removeAccents().toLowerCase();
+
+        if (text.startsWith(find)) {
+            const $value = data[parseInt(i) + 2].str;
+
+            data = data.filter((_, j) => j > i);
+
+            value = ($value.endsWith(':') ? '' : $value).trim();
+
             break;
         }
     }
@@ -24,57 +36,40 @@ const getValue = (data, key, keys = []) => {
     return value;
 };
 
-const getJSON = (data, debug) => {
+const getJSON = (array, debug) => {
     let obj = {};
-    let keys = {
-        matricula: 20,
-        logradouro: 84,
-        setor: 56,
-        quadra: 60,
-        lote: 64,
-        bairro: 80,
-        cep: 50,
-        cpf_cnpj: 34
-    };
 
     try {
-        const arr = data.pages[0].content;
-
-        if (!arr.find(x => x.str === 'Matrícula :')) {
-            keys.logradouro = 24;
-            keys.setor = 65;
-            keys.quadra = 69;
-            keys.lote = 73;
-            keys.bairro = 28;
-            keys.cep = 49;
-            keys.cpf_cnpj = 41;
-        }
-
-        const matricula = getValue(arr, keys.matricula);
-        const logradouro = getValue(arr, keys.logradouro);
-        const cep = getValue(arr, keys.cep).replace(/\D/g, '');
-        const setor = getValue(arr, keys.setor, [ 77 ]).slice(-3);
-        const quadra = getValue(arr, keys.quadra, [ 81 ]).slice(-3);
-        const lote = getValue(arr, keys.lote, [ 85 ]);
+        data = array.pages[0].content.filter((_, i) => i > 15);
 
         obj = {
-            "matricula": `${matricula.slice(0, -1)}-${matricula.slice(-1)}`,
-            "logradouro": logradouro.replace(`,${logradouro.split(",").pop()}`, '').replace(/\d+\s+-\s+/g, '').trim(),
-            "numero": logradouro.split(",").pop().replace(/\D/g, ''),
-            "quadra": `${setor}/${quadra}`,
-            "lote": lote,
-            "bairro": getValue(arr, keys.bairro).replace(/\W|\d/g, ''),
-            "cep": `${cep.substring(0, 5)}-${cep.substring(5)}`,
-            "cpf-cnpj": getValue(arr, keys.cpf_cnpj)
+            matricula: getValue('Matrícula'),
+            logradouro: getValue('Logradouro').replace(/^[\d\s-]+/g, ''),
+            bairro: getValue('Bairro ').replace(/\W|\d/g, ''),
+            cep: getValue('CEP').replace(/[^\d]/g, ''),
+            proprietario: getValue('Nome').replace(/[\d-]/g, '').trim(),
+            cpfCnpj: getValue('CPF/CNPJ'),
+            setor: getValue('Inscrição técnica: Setor'),
+            quadra: getValue('Quadra'),
+            lote: getValue('Lote'),
+            quadraLoc: getValue('Localização: Quadra'),
+            loteLoc: getValue('Lote')
         };
 
-        for (const key in obj) {
-            obj[key] = tryParseInt(obj[key]);
-        }
+        obj.matricula = `${obj.matricula.slice(0, -1)}-${obj.matricula.slice(-1)}`;
+        obj.cep = `${obj.cep.slice(0, 5)}-${obj.cep.slice(5)}`;
+
+        const logradouro = obj.logradouro.replace(/^[\d\s-]+/g, '').split(',');
+        const numero = logradouro.splice(1, 1).pop().trim();
+
+        obj.logradouro = logradouro.join();
+        obj.numero = numero;
     } catch (e) {
         const { message, stack } = e;
 
         obj = { error: true, message, stack };
+
+        console.error(stack);
     }
 
     if (debug) {
@@ -84,7 +79,10 @@ const getJSON = (data, debug) => {
     return obj;
 };
 
+String.prototype.removeAccents = function () { return removeAccents(this) };
+
 module.exports = {
+    removeAccents,
     tryParseInt,
     getValue,
     getJSON,

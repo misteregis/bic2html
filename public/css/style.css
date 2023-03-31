@@ -126,7 +126,7 @@ ul.cols-2 {
 
 span[id] {
     display: inline-block;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     margin-right: 5px;
 }
 
@@ -158,7 +158,9 @@ img.logo {
     margin-bottom: -15px;
 }
 
-.py { padding: 1rem 0; }
+.py { padding: .2rem 0; }
+.pt { padding-top: .2rem; }
+.pb { padding-bottom: .2rem; }
 .px { padding: 0 1rem; }
 .px-0 { padding: 0 14px; }
 
@@ -311,7 +313,7 @@ img.logo {
     visibility: hidden;
     position: absolute;
     left: calc(50% + 326px);
-    top: 82px;
+    top: 65px;
 }
 
 .download.show {
@@ -332,15 +334,18 @@ img.logo {
     fill: #fff;
 }
 
-#matricula { width: 155px; }
-#logradouro { width: 445px; }
-#numero { width: 66px; }
-#quadra { width: 78px; }
-#lote { width: 75px; }
-#bairro { width: 175px }
-#cep { width: 166px; }
-#sujeito-passivo { width: 314px; }
-#cpf-cnpj { width: 285px; }
+#matricula { width: 407px; }
+#logradouro { width: 596px; }
+#numero { width: 46px; }
+#bairro { width: 268px }
+#cep { width: 156px; }
+#proprietario { width: 432px; }
+#cpf-cnpj { width: 167px; }
+#setor { width: 38px; }
+#quadra { width: 38px; }
+#lote { width: 38px; }
+#quadra-loc { width: 38px; }
+#lote-loc { width: 38px; }
 #obs { width: calc(100% - 35.34px - 12px); }
 
 @media print {
