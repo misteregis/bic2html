@@ -126,7 +126,6 @@ ul.cols-2 {
 
 span[id] {
     display: inline-block;
-    /* border-bottom: 1px solid black; */
     margin-right: 5px;
 }
 
@@ -346,7 +345,10 @@ img.logo {
 #lote { width: 38px; }
 #quadra-loc { width: 38px; }
 #lote-loc { width: 38px; }
-#obs { width: calc(100% - 35.34px - 12px); }
+#obs {
+    width: calc(100% - 35.34px - 12px);
+    border-bottom: 1px solid black;
+}
 
 @media print {
     .download { display: none; }
