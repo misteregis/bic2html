@@ -44,7 +44,7 @@ const getJSON = (array, debug) => {
 
         obj = {
             matricula: getValue('Matrícula'),
-            logradouro: getValue('Logradouro').replace(/^[\d\s-]+/g, ''),
+            endereco: getValue('Logradouro'),
             bairro: getValue('Bairro ').replace(/\W|\d/g, ''),
             cep: getValue('CEP').replace(/[^\d]/g, ''),
             proprietario: getValue('Nome').replace(/[\d-]/g, '').trim(),
@@ -58,12 +58,6 @@ const getJSON = (array, debug) => {
 
         obj.matricula = `${obj.matricula.slice(0, -1)}-${obj.matricula.slice(-1)}`;
         obj.cep = `${obj.cep.slice(0, 5)}-${obj.cep.slice(5)}`;
-
-        const logradouro = obj.logradouro.replace(/^[\d\s-]+/g, '').split(',');
-        const numero = logradouro.splice(1, 1).pop().trim();
-
-        obj.logradouro = logradouro.join();
-        obj.numero = numero;
     } catch (e) {
         const { message, stack } = e;
 
